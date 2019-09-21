@@ -1,0 +1,26 @@
+<div class="content_post">
+  <div class="more">
+    <span>あ</span>
+    <ul class="more_list">
+      <%# <li> %>
+        <%# <%= link_to "詳細", tweet_path(tweet.id), method: :get %> %>
+      <%# </li> %>
+      <% if user_signed_in? && current_user.id == blog.user_id %>
+        <li>
+          <%= link_to '編集', "/blog/#{blog.id}/edit", method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', "/blog/#{blog.id}", method: :delete %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%= simple_format(blog.title) %>
+  <span class="name">
+    <a href="/users/<%= blog.user_id %>">
+
+      <span>投稿者</span>
+      <%= blog.content %>
+    </a>
+  </span>
+</div>

@@ -1,0 +1,18 @@
+<div class="contents row">
+  <h3>
+    投稿する
+  </h3>
+  <%=form_for @blog,url: blog_index_path,:html => {:class => "form"} do |f|%> 
+  <%#パス指定しないといけなかった %>
+    <h6>タイトル</h6>
+    <%=f.text_field :title ,:html => {:class => "input"} %>
+    <h6>内容</h6>
+    <%=f.text_area :content ,:html => {:class => "textarea"}%>
+    <%=f.submit 'send',:html => {:class => "input"}%>
+  <% end %>
+  <%# <%= form_tag('/blog', method: :post) do %>
+    <%# <input type=text placeholder="text" name="title" cols="30" rows="5"> %>
+    <%# <textarea placeholder="text" name="content" cols="30" rows="10"></textarea> %>
+    <%# <input type="submit" value="SENT"> %>
+  <%# <% end %>
+</div>

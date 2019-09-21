@@ -1,0 +1,14 @@
+<div class="contents row">
+  <% @blogs.each do |blog|%>
+  <%= render partial: "blog", locals: { blog: blog } %>
+    <%# <div class="content_post"> %>
+      <%# <p> %>
+      <%# <%=blog.title%> 
+      <%# </p> %>
+      <%# <p> %>
+      <%# <%=blog.content%>
+      <%# </p> %>
+    <%# </div> %>
+  <%end%>
+</div>
+    
