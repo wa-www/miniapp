@@ -1,0 +1,18 @@
+<div class="contents row">
+  <h3>
+  編集する
+  </h3>
+
+  <%=form_for @blog,:html => {:class => "form"} do |f|%>
+    <%# <%= form_tag(blog_path, method: :patch) do %>
+    <h6>タイトル</h6>
+    <%=f.text_field :title ,:html => {:class => "input"} %>
+    <%# <input type="text" value="<%= @blog.title %>
+    <%# " name="title" cols="30" rows="5">%>
+    <h6>内容</h6>
+    <%=f.text_area :content ,:html => {:class => "textarea"}%>
+    <%# <textarea name="content" cols="30" rows="10"><%= @blog.content %>
+    <%# </textarea> %>
+    <%=f.submit '送信',:html => {:class => "input"}%>
+  <% end %>
+</div>
