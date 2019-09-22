@@ -1,9 +1,20 @@
 <div class="content_post">
+  <p>
+    <%= simple_format(blog.title) %>
+    <%= simple_format(blog.content) %>
+  </p>
+  <span class="name">
+    <a href="/users/<%= blog.user_id %>" >
+
+      <span><%=blog.user.name%></span>
+    </a>
+  </span>
+
   <div class="more">
-    <span>あ</span>
+    <span>設定</span>
     <ul class="more_list">
       <%# <li> %>
-        <%# <%= link_to "詳細", tweet_path(tweet.id), method: :get %> %>
+          <%#= link_to "詳細", tweet_path(tweet.id), method: :get %>
       <%# </li> %>
       <% if user_signed_in? && current_user.id == blog.user_id %>
         <li>
@@ -15,12 +26,12 @@
       <% end %>
     </ul>
   </div>
-  <%= simple_format(blog.title) %>
-  <span class="name">
-    <a href="/users/<%= blog.user_id %>">
+  <%# <%= simple_format(blog.title) %>
+  <%# <span class="name"> %>
+    <%# <a href="/users/<%= blog.user_id %>
 
-      <span>投稿者</span>
-      <%= blog.content %>
-    </a>
-  </span>
+      <%# <span>投稿者</span> %>
+      <%# <%= blog.content %>
+    <%# </a> %>
+  <%# </span> %>
 </div>

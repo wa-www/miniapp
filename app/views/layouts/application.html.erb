@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pictweet</title>
+    <title>BLOG</title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -27,10 +27,10 @@
         <h1 class="grid-6"><a href="/">blog</a></h1>
         <% if user_signed_in? %>
         <div class="user_nav grid-6">
-                  <span><%= current_user.name %>
+          <span><%= current_user.name %>
             <ul class="user__info">
               <li>
-                <a href="/users/<%= current_user.id %>">マイページ</a>
+                <!--<a href="/users/<%= current_user.id %>">マイページ</a>-->
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
                 </li>
             </ul>
@@ -50,7 +50,7 @@
 
     <footer>
       <p>
-        Copyright PicTweet 2014.
+        Copyright BLOG 2019.
       </p>
     </footer>
   </body>
