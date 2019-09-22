@@ -1,37 +1,37 @@
-<div class="content_post">
-  <p>
-    <%= simple_format(blog.title) %>
-    <%= simple_format(blog.content) %>
-  </p>
-  <span class="name">
-    <a href="/users/<%= blog.user_id %>" >
+<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-      <span><%=blog.user.name%></span>
-    </a>
-  </span>
+<!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-  <div class="more">
-    <span>設定</span>
-    <ul class="more_list">
-      <%# <li> %>
-          <%#= link_to "詳細", tweet_path(tweet.id), method: :get %>
-      <%# </li> %>
-      <% if user_signed_in? && current_user.id == blog.user_id %>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+         
+
+  <div class="col s12 m7">
+    <h2 class="header"><%=blog.title%></h2>
+    <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content">
+          <p><%=blog.content%></p>
+        </div>
+        <div class="card-action">
+          <a href="/users/<%= blog.user_id %>" >
+            <span><%=blog.user.name%></span></a>
+        <ul>
+        <% if user_signed_in? && current_user.id == blog.user_id %>
         <li>
-          <%= link_to '編集', "/blog/#{blog.id}/edit", method: :get %>
+          <%= link_to '編集', edit_blog_path(blog.id), method: :get %>
         </li>
         <li>
-          <%= link_to '削除', "/blog/#{blog.id}", method: :delete %>
+           <%= link_to '削除', blog_path(blog.id), method: :delete %>
         </li>
-      <% end %>
-    </ul>
+        <% end %>
+        </ul>
+        </div>
+      </div>
+    </div>
   </div>
-  <%# <%= simple_format(blog.title) %>
-  <%# <span class="name"> %>
-    <%# <a href="/users/<%= blog.user_id %>
-
-      <%# <span>投稿者</span> %>
-      <%# <%= blog.content %>
-    <%# </a> %>
-  <%# </span> %>
-</div>
+            
