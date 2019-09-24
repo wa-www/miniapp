@@ -12,7 +12,7 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-   
+
 
 <html>
   <body>
@@ -23,7 +23,8 @@
           <% if user_signed_in? %>
           <span><%= current_user.name %>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-              <li><%= link_to "ログアウト", "destroy_user_session_path", method: :delete %></li>   
+              <li><%= button_to 'ログアウト', destroy_user_session_path, method: :get %></li>
+              <li><%= link_to "ログアウト", 'destroy_user_session_path', method: :delete %></li>   
               <li><a class="post" href="/blog/new">投稿する</a></li>
             </ul>
           </span>
