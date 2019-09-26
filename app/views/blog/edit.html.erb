@@ -1,18 +1,26 @@
+<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+         
+
+
 <div class="contents row">
-  <h3>
+  <h4>
   編集する
-  </h3>
+  </h4>
 
   <%=form_for @blog,:html => {:class => "form"} do |f|%>
-    <%# <%= form_tag(blog_path, method: :patch) do %>
     <h6>タイトル</h6>
     <%=f.text_field :title ,:html => {:class => "input"} %>
-    <%# <input type="text" value="<%= @blog.title %>
-    <%# " name="title" cols="30" rows="5">%>
     <h6>内容</h6>
     <%=f.text_area :content ,:html => {:class => "textarea"}%>
-    <%# <textarea name="content" cols="30" rows="10"><%= @blog.content %>
-    <%# </textarea> %>
     <%=f.submit '送信',:html => {:class => "input"}%>
   <% end %>
 </div>

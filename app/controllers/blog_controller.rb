@@ -19,8 +19,7 @@ class BlogController < ApplicationController
 
   def edit
     @blog=Blog.find(params[:id])  #記載が？
-#    binding.pry
-
+    #binding.pry
   end
 
   def update
@@ -28,6 +27,7 @@ class BlogController < ApplicationController
     if blog.user_id == current_user.id
       blog.update(blog_params)
     end
+    redirect_to "/blog"
   end
 
   def destroy
@@ -35,6 +35,7 @@ class BlogController < ApplicationController
     if blog.user_id == current_user.id
       blog.destroy
     end
+    redirect_to "/blog"
   end
 
   def blog_params
