@@ -1,3 +1,20 @@
+.content .row{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.row{
+  // display: flex;
+	// align-items: center;
+	// justify-content: center;
+}
+
+.row .col.m6{
+margin:0 auto;
+}
+
 .ul{
   list-style: none;
 }
