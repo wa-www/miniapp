@@ -13,8 +13,9 @@
 // = require rails-ujs
 // = require jquery
 // = require jquery_ujs
+// = require materialize
 // = require bootstrap.min
 // = require turbolinks
 // = require_tree .
-// = require materialize
+//= require materialize-sprockets
 
