@@ -8,8 +8,7 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-         
-
+        
 
 
       <div class="row">
@@ -23,6 +22,7 @@
             <% if user_signed_in? && current_user.id == blog.user_id %>
               <div class="card-action">
                 <%=link_to "編集",edit_blog_path(blog.id), method: :get %>
+                <%=link_to "sakujo",blog_path(blog.id), method: :delete %>
                 <%=button_to "削除",blog_path(blog.id), method: :delete %>
               </div>
             <%end%>
